@@ -126,7 +126,7 @@ void ClockFace::showTime()
     sscanf(txt.c_str(), "%s %s %i %d:%d:%d", &day, &em, &days, &hours, &minutes, &seconds);
  
     sf::Transform rots;
-    rots.rotate(seconds*6);
+    rots.rotate((seconds-1)*6);
     sf::Transform transform = rots;
     for(std::size_t i = 0; i < m_secondhand.getVertexCount(); ++i)
         m_secondhand[i].position = transform.transformPoint(m_secondhand[i].position);
